@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/nurislam03/MERN-CRUD-Application.git",
+  "author": "Nur Islam",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
