@@ -8,7 +8,7 @@ var cors = require('cors');
 
 //Mongoose connection with mongodb
 mongoose.Promise = require('bluebird');
-mongoose.connect('mongodb://localhost:27017/NewDB');
+mongoose.connect('mongodb://localhost:27017/CrudDB')
     .then(() => {
         console.log('Start');
     })

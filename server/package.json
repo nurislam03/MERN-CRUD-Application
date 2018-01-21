@@ -2,12 +2,19 @@
   "name": "server",
   "version": "1.0.0",
   "main": "index.js",
-  "start": "nodemon app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
   "repository": "https://github.com/nurislam03/MERN-CRUD-Application.git",
   "author": "Nur Islam",
   "license": "MIT",
   "dependencies": {
+    "bluebird": "^3.5.1",
+    "body-parser": "^1.18.2",
+    "cors": "^2.8.4",
     "express": "^4.16.2",
+    "mongodb": "^3.0.1",
+    "mongoose": "^5.0.1",
     "nodemon": "^1.14.11"
-    }
+  }
 }
