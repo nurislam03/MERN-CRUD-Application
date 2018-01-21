@@ -1,10 +1,44 @@
 import React, { Component } from 'react';
 
 class AddItem extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            value: ''
+        }
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            value: event.target.value
+        })
+    }
+
+    handleSubmit = (event) => {
+        alert(this.state.value);
+        event.preventDefault();
+    }
+
     render() {
         return(
-            <div>
-                <h2>Welcome to Add Item</h2>
+            <div className="container">
+                <form onSubmit={this.handleSubmit}>
+                    <label>
+                        Add Item:
+                        <input
+                            type="text"
+                            value={this.state.value}
+                            onChange={this.handleChange}
+                            className="form-control"
+                        />
+                        <br />
+                        <input
+                            type="submit"
+                            value="submit"
+                            className="btn btn-primary"
+                        />
+                    </label>
+                </form>
             </div>
         );
     }
