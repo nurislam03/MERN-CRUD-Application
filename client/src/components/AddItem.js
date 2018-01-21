@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import ItemService from './ItemService';
+
 
 class AddItem extends Component {
     constructor(props) {
@@ -6,6 +8,7 @@ class AddItem extends Component {
         this.state = {
             value: ''
         }
+        this.addItemService = new ItemService();
     }
 
     handleChange = (event) => {
@@ -15,8 +18,10 @@ class AddItem extends Component {
     }
 
     handleSubmit = (event) => {
-        alert(this.state.value);
+        //alert(this.state.value);
         event.preventDefault();
+        this.addItemService.sendData(this.state.value);
+        this.props.history.push('/');
     }
 
     render() {
