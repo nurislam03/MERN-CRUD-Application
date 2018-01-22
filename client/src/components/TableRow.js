@@ -8,7 +8,10 @@ class TableRow extends Component {
                     {this.props.obj._id}
                 </td>
                 <td>
-                    <button className="btn btn-primary">Edit</button>
+                    {this.props.obj.item}
+                </td>
+                <td>
+                    <Link to={"edit/"+this.props.obj._id} className="btn btn-primary">Edit</Link>
                 </td>
                 <td>
                     <button className="btn btn-danger">Delete</button>
