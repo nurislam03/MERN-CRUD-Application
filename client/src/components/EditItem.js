@@ -1,11 +1,15 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import ItemService from './ItemService';
+
 
 class EditItem extends Component {
+
     constructor(props) {
         super(props);
+        this.addItemService = new ItemService();
         this.state = {
-            items: ''
+            value: ''
         }
     }
 
@@ -13,12 +17,24 @@ class EditItem extends Component {
         axios.get('http://localhost:4200/items/edit/'+this.props.match.params.id)
         .then((response) => {
             this.setState({
-                items: response.data
+                value: response.data
             })
         })
         .catch((error) => {
             console.log(error);
         })
+    }
+
+    handleChange = (event) => {
+        this.setState({
+            value: event.target.value
+        });
+    }
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.addItemService.updateDate(this.state.value, this.props.match.params.id);
+        this.props.history.push('/index');
     }
 
     render() {
@@ -29,7 +45,8 @@ class EditItem extends Component {
                         Edit Item:
                         <input
                             type="text"
-                            value={this.state.items.item}
+                            value={this.state.value.item}
+                            onChange={this.handleChange}
                             className="form-control"
                         />
                     </label>
