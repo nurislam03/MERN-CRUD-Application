@@ -11,7 +11,7 @@ class ItemService {
                 items: response.data
             })
         })
-        .then((error) => {
+        .catch((error) => {
             console.log(error);
         });
     }
@@ -21,9 +21,19 @@ class ItemService {
             item: data
         })
         .then((response) => {
-            this.setState({
+            this.asetState({
                 items: response.data
             })
+        })
+        .catch((error) => {
+            console.log(error)
+        })
+    }
+
+    deleteData(id) {
+        axios.get('http://localhost:4200/items/delete/'+id)
+        .then(() => {
+            console.log('Deleted')
         })
         .catch((error) => {
             console.log(error)

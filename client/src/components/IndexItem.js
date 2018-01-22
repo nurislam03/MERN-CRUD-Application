@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ItemService from '/ItemService';
+import ItemService from './ItemService';
 import axios from 'axios';
 import TableRow from './TableRow';
 
@@ -36,11 +36,12 @@ class IndexItem extends Component {
     render() {
         return (
             <div className="container">
+                <h1>CRUD APP</h1>
                 <table className="table table-striped">
                     <thead>
                         <tr>
-                            <td>No.</td>
-                            <td>Item</td>
+                            <td>Item Id</td>
+                            <td>Item Name</td>
                         </tr>
                     </thead>
                     <tbody>
