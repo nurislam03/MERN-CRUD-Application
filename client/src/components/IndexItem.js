@@ -36,7 +36,8 @@ class IndexItem extends Component {
     render() {
         return (
             <div className="container">
-                <h1>CRUD APP</h1>
+                <h1 className='text-center'>MERN CRUD APPLICATION</h1>
+                <br />
                 <table className="table table-striped">
                     <thead>
                         <tr>
