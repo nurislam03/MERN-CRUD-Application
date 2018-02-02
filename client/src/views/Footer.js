@@ -4,7 +4,7 @@ import './FooterCSS.css';
 
 function CustomFooter(props) {
     return (
-        <h4>All right reserved by Nur Islam</h4>
+        <h4>All rights reserved by Nur Islam</h4>
     );
 }
 
