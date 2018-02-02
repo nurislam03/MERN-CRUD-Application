@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
 
-
-
-import App from './App';
 import AddItem from './components/AddItem';
 import IndexItem from './components/IndexItem';
 import EditItem from './components/EditItem';
@@ -18,7 +15,7 @@ class Main extends Component {
         return (
             <main>
                 <switch>
-                    <Route exact path='/' component={App} />
+                    <Route exact path='/' component={IndexItem} />
                     <Route path='/add-item' component={AddItem} />
                     <Route path='/index' component={IndexItem} />
                     <Route path='/edit/:id' component={EditItem} />

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {LinkContainer} from 'react-router-bootstrap';
 
 import {
     Grid,
@@ -11,17 +12,22 @@ import {
     MenuItem
 } from 'react-bootstrap';
 
+import {
+  NavLink,
+} from 'reactstrap';
 
 function CustomHeader(props) {
 
     const navbarInstance = (
         <Navbar inverse collapseOnSelect>
+
           <Navbar.Header>
             <Navbar.Brand>
-              <a href="#brand">React-Bootstrap</a>
+              <a href="/">MERN CRUD APP</a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>
+
           <Navbar.Collapse>
             <Nav>
               <NavItem eventKey={1} href="#">
@@ -38,15 +44,20 @@ function CustomHeader(props) {
                 <MenuItem eventKey={3.3}>Separated link</MenuItem>
               </NavDropdown>
             </Nav>
+
             <Nav pullRight>
-              <NavItem eventKey={1} href="#">
-                Link Right
-              </NavItem>
-              <NavItem eventKey={2} href="#">
-                Link Right
-              </NavItem>
+                <NavItem>
+                    <LinkContainer to='/add-item'>
+                      <NavLink>Add-Item</NavLink>
+                    </LinkContainer>
+                </NavItem>
+
+               <NavItem eventKey={1} href="#">
+                  Link Right
+               </NavItem>
             </Nav>
           </Navbar.Collapse>
+
       </Navbar>
     );
 
